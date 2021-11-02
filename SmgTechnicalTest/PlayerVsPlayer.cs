@@ -43,18 +43,22 @@ namespace SmgTechnicalTest
                     if (p2.playerChoice == "rock")
                     {
                         Console.WriteLine($"You both chose rock, its a draw!");
+                        Console.WriteLine();
+                        Console.WriteLine("***********************************************************************************************************************");
                     }
                     //If player two chose paper
                     else if (p2.playerChoice == "paper")
                     {
-                        Console.WriteLine();
                         Console.WriteLine($"{p1.playerName} chose rock and {p2.playerName} chose paper. Paper wraps rock, {p2.playerName} wins!");
+                        Console.WriteLine();
+                        Console.WriteLine("***********************************************************************************************************************");
                     }
                     //If player two chose scissors
                     else if (p2.playerChoice == "scissors")
                     {
-                        Console.WriteLine();
                         Console.WriteLine($"{p1.playerName} chose rock and {p2.playerName} chose scissors. Rock crushes scissors, {p1.playerName} wins!");
+                        Console.WriteLine();
+                        Console.WriteLine("***********************************************************************************************************************");
                     }
 
                 //Player one chose paper 
@@ -63,16 +67,20 @@ namespace SmgTechnicalTest
                     if (p2.playerChoice == "rock")
                     {
                         Console.WriteLine($"{p1.playerName} chose paper and {p2.playerName} chose rock. Paper wraps rock, {p1.playerName} wins!");
+                        Console.WriteLine();
+                        Console.WriteLine("***********************************************************************************************************************");
                     }
                     else if (p2.playerChoice == "paper")
                     {
-                        Console.WriteLine();
                         Console.WriteLine($"You both chose paper, its a draw!");
+                        Console.WriteLine();
+                        Console.WriteLine("***********************************************************************************************************************");
                     }
                     else if (p2.playerChoice == "scissors")
                     {
-                        Console.WriteLine();
                         Console.WriteLine($"{p1.playerName} chose paper and {p2.playerName} chose scissors. Scissors cuts paper, {p2.playerName} wins!");
+                        Console.WriteLine();
+                        Console.WriteLine("***********************************************************************************************************************");
                     }
 
                 //Player one chose scissors 
@@ -81,16 +89,22 @@ namespace SmgTechnicalTest
                     if (p2.playerChoice == "rock")
                     {
                         Console.WriteLine($"{p1.playerName} chose scissors and {p2.playerName} chose rock. Rock crushes scissors, {p2.playerName} wins!");
+                        Console.WriteLine();
+                        Console.WriteLine("***********************************************************************************************************************");
                     }
                     else if (p2.playerChoice == "paper")
                     {
                         Console.WriteLine();
                         Console.WriteLine($"{p1.playerName} chose scissors and {p2.playerName} chose paper. Scissors cuts paper, {p1.playerName} wins!");
+                        Console.WriteLine();
+                        Console.WriteLine("***********************************************************************************************************************");
                     }
                     else if (p2.playerChoice == "scissors")
                     {
                         Console.WriteLine();
                         Console.WriteLine($"You both chose scissors, its a draw!");
+                        Console.WriteLine();
+                        Console.WriteLine("***********************************************************************************************************************");
                     }
 
                 //Ask the user if they want to play again
