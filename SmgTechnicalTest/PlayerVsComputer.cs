@@ -19,6 +19,7 @@ namespace SmgTechnicalTest
             String playerChoice;
             String computerChoice;
             String answer;
+            int roundsOfTurns = 0;
             int rockChosen = 0;
             int paperChosen = 0;
             int scissorsChosen = 0;
@@ -29,6 +30,10 @@ namespace SmgTechnicalTest
                 playerChoice = "";
                 computerChoice = "";
                 answer = "";
+                rockChosen = 0;
+                paperChosen = 0;
+                scissorsChosen = 0;
+                roundsOfTurns = 0;
 
                 //Ask user to enter their choice whilst checking that the input is valid
                 while (playerChoice != "rock" && playerChoice != "paper" && playerChoice != "scissors")
@@ -48,19 +53,16 @@ namespace SmgTechnicalTest
                     //Computer gets 1(rock)
                     case 1:
                         computerChoice = "rock";
-                        rockChosen += 1;
                         break;
 
                     //Computer gets 2(paper)
                     case 2:
                         computerChoice = "paper";
-                        paperChosen += 1;
                         break;
 
                     //Computer gets 3(paper)
                     case 3:
                         computerChoice = "scissors";
-                        scissorsChosen += 1;
                         break;        
                 }
 
@@ -70,19 +72,41 @@ namespace SmgTechnicalTest
                     //Player threw rock
                     case "rock":
                         rockChosen += 1;
-
                         //If computer's choice is rock
                         if (computerChoice == "rock")
                         {
-                            Console.WriteLine($"The computer also threw rock, its a draw");
+                            rockChosen += 1;
+                            roundsOfTurns += 1;
+                            Console.WriteLine($"The computer also threw rock, its a draw!");
                             Console.WriteLine();
                             Console.WriteLine("***********************************************************************************************************************");
+                            Console.WriteLine();
+                            Console.WriteLine("Stats for this game: ");
+                            Console.WriteLine();
+                            Console.WriteLine($"Rock chosen - {rockChosen}, Paper chosen - {paperChosen}, Scissors chosen - {scissorsChosen}");
+                            Console.WriteLine();
+                            Console.WriteLine($"The game drew in the {roundsOfTurns}st turn");
+                            Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
+
+                            //Restart the game, how?
+                            bool gameNotEnded = true;
                         }
 
                         //If computer's choice is paper
                         else if (computerChoice == "paper")
                         {
+                            paperChosen += 1;
+                            roundsOfTurns += 1;
                             Console.WriteLine($"The computer threw paper, it covers rock. Computer wins!");
+                            Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
+                            Console.WriteLine();
+                            Console.WriteLine("Stats for this game: ");
+                            Console.WriteLine();
+                            Console.WriteLine($"Rock chosen - {rockChosen}, Paper chosen - {paperChosen}, Scissors chosen - {scissorsChosen}");
+                            Console.WriteLine();
+                            Console.WriteLine($"The game ended in {roundsOfTurns} turns. ");
                             Console.WriteLine();
                             Console.WriteLine("***********************************************************************************************************************");
                         }
@@ -90,7 +114,17 @@ namespace SmgTechnicalTest
                         //If computer's choice is scissors
                         else
                         {
+                            scissorsChosen += 1;
+                            roundsOfTurns += 1;
                             Console.WriteLine($"The computer threw scissors, rock crushes the scissors. You win!");
+                            Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
+                            Console.WriteLine();
+                            Console.WriteLine("Stats for this game: ");
+                            Console.WriteLine();
+                            Console.WriteLine($"Rock chosen - {rockChosen}, Paper chosen - {paperChosen}, Scissors chosen - {scissorsChosen}");
+                            Console.WriteLine();
+                            Console.WriteLine($"The game ended in {roundsOfTurns} turns. ");
                             Console.WriteLine();
                             Console.WriteLine("***********************************************************************************************************************");
                         }
@@ -103,7 +137,16 @@ namespace SmgTechnicalTest
                         //If computer's choice is rock
                         if (computerChoice == "rock")
                         {
+                            rockChosen += 1;
                             Console.WriteLine($"The computer threw rock, paper covers rock. You win! ");
+                            Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
+                            Console.WriteLine();
+                            Console.WriteLine("Stats for this game: ");
+                            Console.WriteLine();
+                            Console.WriteLine($"Rock chosen - {rockChosen}, Paper chosen - {paperChosen}, Scissors chosen - {scissorsChosen}");
+                            Console.WriteLine();
+                            Console.WriteLine($"The game ended in {roundsOfTurns} turns. ");
                             Console.WriteLine();
                             Console.WriteLine("***********************************************************************************************************************");
                         }
@@ -111,7 +154,17 @@ namespace SmgTechnicalTest
                         //If computer's choice is paper
                         else if (computerChoice == "paper")
                         {
+                            paperChosen += 1;
+                            roundsOfTurns += 1;
                             Console.WriteLine($"The computer also threw paper, its a draw!");
+                            Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
+                            Console.WriteLine();
+                            Console.WriteLine("Stats for this game: ");
+                            Console.WriteLine();
+                            Console.WriteLine($"Rock chosen - {rockChosen}, Paper chosen - {paperChosen}, Scissors chosen - {scissorsChosen}");
+                            Console.WriteLine();
+                            Console.WriteLine($"The game drew in the {roundsOfTurns}st turn");
                             Console.WriteLine();
                             Console.WriteLine("***********************************************************************************************************************");
                         }
@@ -119,7 +172,16 @@ namespace SmgTechnicalTest
                         //If computer's choice is scissors
                         else
                         {
+                            scissorsChosen += 1;
                             Console.WriteLine($"The computer threw scissors, scissors cuts paper. Computer wins!");
+                            Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
+                            Console.WriteLine();
+                            Console.WriteLine("Stats for this game: ");
+                            Console.WriteLine();
+                            Console.WriteLine($"Rock chosen - {rockChosen}, Paper chosen - {paperChosen}, Scissors chosen - {scissorsChosen}");
+                            Console.WriteLine();
+                            Console.WriteLine($"The game ended in {roundsOfTurns} turns. ");
                             Console.WriteLine();
                             Console.WriteLine("***********************************************************************************************************************");
                         }
@@ -132,7 +194,16 @@ namespace SmgTechnicalTest
                         //If computer's choice is rock
                         if (computerChoice == "rock")
                         {
+                            rockChosen += 1;
                             Console.WriteLine($"The computer threw rock, rock crushes scissors. Computer wins! ");
+                            Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
+                            Console.WriteLine();
+                            Console.WriteLine("Stats for this game: ");
+                            Console.WriteLine();
+                            Console.WriteLine($"Rock chosen - {rockChosen}, Paper chosen - {paperChosen}, Scissors chosen - {scissorsChosen}");
+                            Console.WriteLine();
+                            Console.WriteLine($"The game ended in {roundsOfTurns} turns. ");
                             Console.WriteLine();
                             Console.WriteLine("***********************************************************************************************************************");
                         }
@@ -140,7 +211,16 @@ namespace SmgTechnicalTest
                         //If computer's choice is paper
                         else if (computerChoice == "paper")
                         {
+                            paperChosen += 1;
                             Console.WriteLine($"The computer threw paper, scissors cuts paper. You win!");
+                            Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
+                            Console.WriteLine();
+                            Console.WriteLine("Stats for this game: ");
+                            Console.WriteLine();
+                            Console.WriteLine($"Rock chosen - {rockChosen}, Paper chosen - {paperChosen}, Scissors chosen - {scissorsChosen}");
+                            Console.WriteLine();
+                            Console.WriteLine($"The game ended in {roundsOfTurns} turns. ");
                             Console.WriteLine();
                             Console.WriteLine("***********************************************************************************************************************");
                         }
@@ -148,7 +228,17 @@ namespace SmgTechnicalTest
                         //If computer's choice is scissors
                         else
                         {
+                            scissorsChosen += 1;
+                            roundsOfTurns += 1;
                             Console.WriteLine($"The computer also threw scissors, its a draw!");
+                            Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
+                            Console.WriteLine();
+                            Console.WriteLine("Stats for this game: ");
+                            Console.WriteLine();
+                            Console.WriteLine($"Rock chosen - {rockChosen}, Paper chosen - {paperChosen}, Scissors chosen - {scissorsChosen}");
+                            Console.WriteLine();
+                            Console.WriteLine($"The game drew in the {roundsOfTurns}st turn");
                             Console.WriteLine();
                             Console.WriteLine("***********************************************************************************************************************");
                         }
@@ -168,6 +258,10 @@ namespace SmgTechnicalTest
                 if (answer == "y")
                 {
                     playAgain = true;
+                    rockChosen = 0;
+                    paperChosen = 0;
+                    scissorsChosen = 0;
+                    roundsOfTurns = 0;
                     Console.WriteLine();
                     Console.WriteLine("***********************************************************************************************************************");
                     Console.WriteLine();

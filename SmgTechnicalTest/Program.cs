@@ -49,6 +49,7 @@ namespace SmgTechnicalTest
                         case 2:
                             Console.WriteLine($"You chose {userChoiceInt} - Player vs Computer");
                             Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
                             PlayerVsComputer.Main();
                             break;
                     }
