@@ -20,93 +20,228 @@ namespace SmgTechnicalTest
             //Instantiate variables for a player object and user's choice to play again
             bool playAgain = true;
             String answer;
-            var p1 = new Player();
-            var p2 = new Player();
 
             while (playAgain)
             {
-                //Reset play again answer
+                //Reset values on a new game 
                 answer = "";
+                var p1 = new Player(); //Is this necessary?
+                var p2 = new Player();
+                int roundsOfTurns = 0;
+                int rockChosen = 0;
+                int paperChosen = 0;
+                int scissorsChosen = 0;
 
                 //Game calls the two functions below to get player's info
                 p1 = GetPlayerOneInfo();
                 p2 = GetPlayerTwoInfo();
 
-                ////Testing purposes
+                //////Testing purposes
                 //Console.WriteLine($"{p1.playerName} chose {p1.playerChoice} & {p2.playerName} chose {p2.playerChoice}");
 
                 //Determine the outcome of the game
 
-                //Player one chooses rock 
-                if (p1.playerChoice == "rock")
-                    //If player two also chose rock
-                    if (p2.playerChoice == "rock")
-                    {
-                        Console.WriteLine($"You both chose rock, its a draw!");
-                        Console.WriteLine();
-                        Console.WriteLine("***********************************************************************************************************************");
-                    }
-                    //If player two chose paper
-                    else if (p2.playerChoice == "paper")
-                    {
-                        Console.WriteLine($"{p1.playerName} chose rock and {p2.playerName} chose paper. Paper wraps rock, {p2.playerName} wins!");
-                        Console.WriteLine();
-                        Console.WriteLine("***********************************************************************************************************************");
-                    }
-                    //If player two chose scissors
-                    else if (p2.playerChoice == "scissors")
-                    {
-                        Console.WriteLine($"{p1.playerName} chose rock and {p2.playerName} chose scissors. Rock crushes scissors, {p1.playerName} wins!");
-                        Console.WriteLine();
-                        Console.WriteLine("***********************************************************************************************************************");
-                    }
+                switch (p1.playerChoice)
+                {
+                    //Player 1 chose rock
+                    case "rock":
 
-                //Player one chose paper 
-                if (p1.playerChoice == "paper")
-                    //Player two chose rock
-                    if (p2.playerChoice == "rock")
-                    {
-                        Console.WriteLine($"{p1.playerName} chose paper and {p2.playerName} chose rock. Paper wraps rock, {p1.playerName} wins!");
-                        Console.WriteLine();
-                        Console.WriteLine("***********************************************************************************************************************");
-                    }
-                    else if (p2.playerChoice == "paper")
-                    {
-                        Console.WriteLine($"You both chose paper, its a draw!");
-                        Console.WriteLine();
-                        Console.WriteLine("***********************************************************************************************************************");
-                    }
-                    else if (p2.playerChoice == "scissors")
-                    {
-                        Console.WriteLine($"{p1.playerName} chose paper and {p2.playerName} chose scissors. Scissors cuts paper, {p2.playerName} wins!");
-                        Console.WriteLine();
-                        Console.WriteLine("***********************************************************************************************************************");
-                    }
+                        rockChosen += 1;
 
-                //Player one chose scissors 
-                if (p1.playerChoice == "scissors")
-                    //Player two chose rock
-                    if (p2.playerChoice == "rock")
-                    {
-                        Console.WriteLine($"{p1.playerName} chose scissors and {p2.playerName} chose rock. Rock crushes scissors, {p2.playerName} wins!");
-                        Console.WriteLine();
-                        Console.WriteLine("***********************************************************************************************************************");
-                    }
-                    else if (p2.playerChoice == "paper")
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine($"{p1.playerName} chose scissors and {p2.playerName} chose paper. Scissors cuts paper, {p1.playerName} wins!");
-                        Console.WriteLine();
-                        Console.WriteLine("***********************************************************************************************************************");
-                    }
-                    else if (p2.playerChoice == "scissors")
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine($"You both chose scissors, its a draw!");
-                        Console.WriteLine();
-                        Console.WriteLine("***********************************************************************************************************************");
-                    }
+                        //If player 2 also chose rock
+                        if (p2.playerChoice == "rock")
+                        {
+                            rockChosen += 1;
+                            roundsOfTurns += 1;
+                            Console.WriteLine("***********************************************************************************************************************");
+                            Console.WriteLine();
+                            Console.WriteLine("You both threw rock, its a draw!");
+                            Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
+                            Console.WriteLine();
+                            Console.WriteLine("Stats for this game: ");
+                            Console.WriteLine();
+                            Console.WriteLine($"Most used move: Rock - {rockChosen} times");
+                            Console.WriteLine();
+                            Console.WriteLine($"The game drew in the {roundsOfTurns}st turn");
+                            Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
+                        }
 
+                        //If player 2 chose paper
+                        else if (p2.playerChoice == "paper")
+                        {
+                            paperChosen += 1;
+                            roundsOfTurns += 1;
+                            Console.WriteLine("***********************************************************************************************************************");
+                            Console.WriteLine();
+                            Console.WriteLine($"{p2.playerName} threw paper, paper covers rock. {p2.playerName} wins!");
+                            Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
+                            Console.WriteLine();
+                            Console.WriteLine("Stats for this game: ");
+                            Console.WriteLine();
+                            Console.WriteLine($"Rock chosen - {rockChosen}, Paper chosen - {paperChosen}");
+                            Console.WriteLine();
+                            Console.WriteLine($"The game ended in {roundsOfTurns} turns. ");
+                            Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
+                        }
+
+                        //Else player two chose scissors
+                        else
+                        {
+                            scissorsChosen += 1;
+                            roundsOfTurns += 1;
+                            Console.WriteLine("***********************************************************************************************************************");
+                            Console.WriteLine();
+                            Console.WriteLine($"{p2.playerName} threw scissors, rock crushes scissors. You win!");
+                            Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
+                            Console.WriteLine();
+                            Console.WriteLine("Stats for this game: ");
+                            Console.WriteLine();
+                            Console.WriteLine($"Rock chosen - {rockChosen}, Scissors chosen - {scissorsChosen}");
+                            Console.WriteLine();
+                            Console.WriteLine($"The game ended in {roundsOfTurns} turns. ");
+                            Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
+                        }
+                        break;
+
+                    //Player 1 chose paper
+                    case "paper":
+
+                        paperChosen += 1;
+
+                        //If player 2 chose rock
+                        if (p2.playerChoice == "rock")
+                        {
+                            rockChosen += 1;
+                            roundsOfTurns += 1;
+                            Console.WriteLine("***********************************************************************************************************************");
+                            Console.WriteLine();
+                            Console.WriteLine($"{p2.playerName} threw rock, paper covers rock. {p1.playerName} wins!");
+                            Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
+                            Console.WriteLine();
+                            Console.WriteLine("Stats for this game: ");
+                            Console.WriteLine();
+                            Console.WriteLine($"Paper chosen - {paperChosen} times, Rock chosen - {rockChosen} times");
+                            Console.WriteLine();
+                            Console.WriteLine($"The game ended in the {roundsOfTurns} turn");
+                            Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
+                        }
+
+                        //If player 2 also chose paper
+                        else if (p2.playerChoice == "paper")
+                        {
+                            paperChosen += 1;
+                            roundsOfTurns += 1;
+                            Console.WriteLine("***********************************************************************************************************************");
+                            Console.WriteLine();
+                            Console.WriteLine("You both threw paper, its a draw!");
+                            Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
+                            Console.WriteLine();
+                            Console.WriteLine("Stats for this game: ");
+                            Console.WriteLine();
+                            Console.WriteLine($"Most used move: Paper - {paperChosen} times");
+                            Console.WriteLine();
+                            Console.WriteLine($"The game drew in the {roundsOfTurns}st turn. ");
+                            Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
+                        }
+
+                        //Else player two chose scissors
+                        else
+                        {
+                            scissorsChosen += 1;
+                            roundsOfTurns += 1;
+                            Console.WriteLine("***********************************************************************************************************************");
+                            Console.WriteLine();
+                            Console.WriteLine($"{p2.playerName} threw scissors, scissors cuts paper. {p2.playerName} wins!");
+                            Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
+                            Console.WriteLine();
+                            Console.WriteLine("Stats for this game: ");
+                            Console.WriteLine();
+                            Console.WriteLine($"Paper chosen - {paperChosen}, Scissors chosen - {scissorsChosen}");
+                            Console.WriteLine();
+                            Console.WriteLine($"The game ended in {roundsOfTurns} turns. ");
+                            Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
+                        }
+                        break;
+
+                    //Player 1 chose scissors
+                    case "scissors":
+
+                        scissorsChosen += 1;
+
+                        //If player 2 chose rock
+                        if (p2.playerChoice == "rock")
+                        {
+                            rockChosen += 1;
+                            roundsOfTurns += 1;
+                            Console.WriteLine("***********************************************************************************************************************");
+                            Console.WriteLine();
+                            Console.WriteLine($"{p2.playerName} threw rock, rock crushes scissors. {p2.playerName} wins!");
+                            Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
+                            Console.WriteLine();
+                            Console.WriteLine("Stats for this game: ");
+                            Console.WriteLine();
+                            Console.WriteLine($"Scissors chosen - {scissorsChosen} times, Rock chosen - {rockChosen} times");
+                            Console.WriteLine();
+                            Console.WriteLine($"The game ended in {roundsOfTurns} turns.");
+                            Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
+                        }
+
+                        //If player 2 chose paper
+                        else if (p2.playerChoice == "paper")
+                        {
+                            paperChosen += 1;
+                            roundsOfTurns += 1;
+                            Console.WriteLine("***********************************************************************************************************************");
+                            Console.WriteLine();
+                            Console.WriteLine($"{p2.playerName} threw paper, scissors cuts paper. {p1.playerName} wins!");
+                            Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
+                            Console.WriteLine();
+                            Console.WriteLine("Stats for this game: ");
+                            Console.WriteLine();
+                            Console.WriteLine($"Scissors chosen - {scissorsChosen}, Paper - {paperChosen} times");
+                            Console.WriteLine();
+                            Console.WriteLine($"The game ended in {roundsOfTurns} turns. ");
+                            Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
+                        }
+
+                        //Else player 2 two chose scissors
+                        else
+                        {
+                            scissorsChosen += 1;
+                            roundsOfTurns += 1;
+                            Console.WriteLine("***********************************************************************************************************************");
+                            Console.WriteLine();
+                            Console.WriteLine("You both threw scissors, its a draw!");
+                            Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
+                            Console.WriteLine();
+                            Console.WriteLine("Stats for this game: ");
+                            Console.WriteLine();
+                            Console.WriteLine($"Most used move: Scissors {scissorsChosen} times");
+                            Console.WriteLine();
+                            Console.WriteLine($"The game drew in the {roundsOfTurns}st turn. ");
+                            Console.WriteLine();
+                            Console.WriteLine("***********************************************************************************************************************");
+                        }
+                        break;
+                }
+               
                 //Ask the user if they want to play again
                 while (answer != "y" && answer != "n")
                 {
@@ -120,6 +255,10 @@ namespace SmgTechnicalTest
                 if (answer == "y")
                 {
                     playAgain = true;
+                    roundsOfTurns = 0;
+                    rockChosen = 0;
+                    paperChosen = 0;
+                    scissorsChosen = 0;
                     Console.WriteLine();
                     Console.WriteLine("***********************************************************************************************************************");
                     Console.WriteLine();
@@ -176,3 +315,4 @@ namespace SmgTechnicalTest
         }
     }
 }
+

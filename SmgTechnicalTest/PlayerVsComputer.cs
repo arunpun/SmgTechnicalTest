@@ -19,10 +19,6 @@ namespace SmgTechnicalTest
             String playerChoice;
             String computerChoice;
             String answer;
-            int roundsOfTurns = 0;
-            int rockChosen = 0;
-            int paperChosen = 0;
-            int scissorsChosen = 0;
 
             while (playAgain)
             {
@@ -30,10 +26,11 @@ namespace SmgTechnicalTest
                 playerChoice = "";
                 computerChoice = "";
                 answer = "";
-                rockChosen = 0;
-                paperChosen = 0;
-                scissorsChosen = 0;
-                roundsOfTurns = 0;
+                int roundsOfTurns = 0;
+                int rockChosen = 0;
+                int paperChosen = 0;
+                int scissorsChosen = 0;
+
 
                 //Ask user to enter their choice whilst checking that the input is valid
                 while (playerChoice != "rock" && playerChoice != "paper" && playerChoice != "scissors")
@@ -90,7 +87,7 @@ namespace SmgTechnicalTest
                             Console.WriteLine("***********************************************************************************************************************");
 
                             //Restart the game, how?
-                            bool gameNotEnded = true;
+                            //bool gameNotEnded = true;
                         }
 
                         //If computer's choice is paper
