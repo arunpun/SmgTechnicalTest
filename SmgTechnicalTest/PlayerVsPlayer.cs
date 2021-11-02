@@ -17,74 +17,105 @@ namespace SmgTechnicalTest
         //This runs the game
         private static void StartPvp()
         {
-            //Instantiate variables for a player object
+            //Instantiate variables for a player object and user's choice to play again
+            bool playAgain = true;
+            String answer;
             var p1 = new Player();
             var p2 = new Player();
 
-            //Game calls the two functions below to get player's info
-            p1 = GetPlayerOneInfo();
-            p2 = GetPlayerTwoInfo();
+            while (playAgain)
+            {
+                //Reset play again answer
+                answer = "";
 
-            ////Testing purposes
-            //Console.WriteLine($"{p1.playerName} chose {p1.playerChoice} & {p2.playerName} chose {p2.playerChoice}");
+                //Game calls the two functions below to get player's info
+                p1 = GetPlayerOneInfo();
+                p2 = GetPlayerTwoInfo();
 
-            //Determine the outcome of the game
+                ////Testing purposes
+                //Console.WriteLine($"{p1.playerName} chose {p1.playerChoice} & {p2.playerName} chose {p2.playerChoice}");
 
-            //Player one chooses rock 
-            if (p1.playerChoice == "rock")
-                //If player two also chose rock
-                if (p2.playerChoice == "rock")
-                {
-                    Console.WriteLine($"You both chose rock, its a draw!");
-                }
-                //If player two chose paper
-                else if (p2.playerChoice == "paper")
+                //Determine the outcome of the game
+
+                //Player one chooses rock 
+                if (p1.playerChoice == "rock")
+                    //If player two also chose rock
+                    if (p2.playerChoice == "rock")
+                    {
+                        Console.WriteLine($"You both chose rock, its a draw!");
+                    }
+                    //If player two chose paper
+                    else if (p2.playerChoice == "paper")
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine($"{p1.playerName} chose rock and {p2.playerName} chose paper. Paper wraps rock, {p2.playerName} wins!");
+                    }
+                    //If player two chose scissors
+                    else if (p2.playerChoice == "scissors")
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine($"{p1.playerName} chose rock and {p2.playerName} chose scissors. Rock crushes scissors, {p1.playerName} wins!");
+                    }
+
+                //Player one chose paper 
+                if (p1.playerChoice == "paper")
+                    //Player two chose rock
+                    if (p2.playerChoice == "rock")
+                    {
+                        Console.WriteLine($"{p1.playerName} chose paper and {p2.playerName} chose rock. Paper wraps rock, {p1.playerName} wins!");
+                    }
+                    else if (p2.playerChoice == "paper")
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine($"You both chose paper, its a draw!");
+                    }
+                    else if (p2.playerChoice == "scissors")
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine($"{p1.playerName} chose paper and {p2.playerName} chose scissors. Scissors cuts paper, {p2.playerName} wins!");
+                    }
+
+                //Player one chose scissors 
+                if (p1.playerChoice == "scissors")
+                    //Player two chose rock
+                    if (p2.playerChoice == "rock")
+                    {
+                        Console.WriteLine($"{p1.playerName} chose scissors and {p2.playerName} chose rock. Rock crushes scissors, {p2.playerName} wins!");
+                    }
+                    else if (p2.playerChoice == "paper")
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine($"{p1.playerName} chose scissors and {p2.playerName} chose paper. Scissors cuts paper, {p1.playerName} wins!");
+                    }
+                    else if (p2.playerChoice == "scissors")
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine($"You both chose scissors, its a draw!");
+                    }
+
+                //Ask the user if they want to play again
+                while (answer != "y" && answer != "n")
                 {
                     Console.WriteLine();
-                    Console.WriteLine($"{p1.playerName} chose rock and {p2.playerName} chose paper. Paper wraps rock, {p2.playerName} wins!");
-                }
-                //If player two chose scissors
-                else if (p2.playerChoice == "scissors")
-                {
-                    Console.WriteLine();
-                    Console.WriteLine($"{p1.playerName} chose rock and {p2.playerName} chose scissors. Rock crushes scissors, {p1.playerName} wins!");
+                    Console.WriteLine("Would you like to play again? Please enter (y for yes or n for no): ");
+                    answer = Console.ReadLine();
+                    answer.ToLower();
                 }
 
-            //Player one chose paper 
-            if (p1.playerChoice == "paper")
-                //Player two chose rock
-                if (p2.playerChoice == "rock")
+                //Restart or end the game
+                if (answer == "y")
                 {
-                    Console.WriteLine($"{p1.playerName} chose paper and {p2.playerName} chose rock. Paper wraps rock, {p1.playerName} wins!");
-                }
-                else if (p2.playerChoice == "paper")
-                {
+                    playAgain = true;
                     Console.WriteLine();
-                    Console.WriteLine($"You both chose paper, its a draw!");
-                }
-                else if (p2.playerChoice == "scissors")
-                {
+                    Console.WriteLine("***********************************************************************************************************************");
                     Console.WriteLine();
-                    Console.WriteLine($"{p1.playerName} chose paper and {p2.playerName} chose scissors. Scissors cuts paper, {p2.playerName} wins!");
                 }
-
-            //Player one chose scissors 
-            if (p1.playerChoice == "scissors")
-                //Player two chose rock
-                if (p2.playerChoice == "rock")
+                else
                 {
-                    Console.WriteLine($"{p1.playerName} chose scissors and {p2.playerName} chose rock. Rock crushes scissors, {p2.playerName} wins!");
+                    playAgain = false;
+                    Console.WriteLine("");
                 }
-                else if (p2.playerChoice == "paper")
-                {
-                    Console.WriteLine();
-                    Console.WriteLine($"{p1.playerName} chose scissors and {p2.playerName} chose paper. Scissors cuts paper, {p1.playerName} wins!");
-                }
-                else if (p2.playerChoice == "scissors")
-                {
-                    Console.WriteLine();
-                    Console.WriteLine($"You both chose scissors, its a draw!");
-                }
+            }
 
             //Function to get player one's info
             static Player GetPlayerOneInfo()
