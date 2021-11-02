@@ -13,12 +13,15 @@ namespace SmgTechnicalTest
             ////For testing 
             //Console.WriteLine("PlayerVsComputer main method is now running");
 
-            //Create an instance of Random and declare variables
+            //Create an instance of Random, declare and initialize variables
             Random random = new Random();
             bool playAgain = true;
             String playerChoice;
             String computerChoice;
             String answer;
+            int rockChosen = 0;
+            int paperChosen = 0;
+            int scissorsChosen = 0;
 
             while (playAgain)
             {
@@ -45,16 +48,19 @@ namespace SmgTechnicalTest
                     //Computer gets 1(rock)
                     case 1:
                         computerChoice = "rock";
+                        rockChosen += 1;
                         break;
 
                     //Computer gets 2(paper)
                     case 2:
                         computerChoice = "paper";
+                        paperChosen += 1;
                         break;
 
                     //Computer gets 3(paper)
                     case 3:
                         computerChoice = "scissors";
+                        scissorsChosen += 1;
                         break;        
                 }
 
@@ -63,6 +69,8 @@ namespace SmgTechnicalTest
                 {
                     //Player threw rock
                     case "rock":
+                        rockChosen += 1;
+
                         //If computer's choice is rock
                         if (computerChoice == "rock")
                         {
@@ -90,6 +98,8 @@ namespace SmgTechnicalTest
 
                     //Player threw paper
                     case "paper":
+                        paperChosen += 1;
+
                         //If computer's choice is rock
                         if (computerChoice == "rock")
                         {
@@ -117,6 +127,8 @@ namespace SmgTechnicalTest
 
                     //Player threw scissors
                     case "scissors":
+                        scissorsChosen += 1;
+
                         //If computer's choice is rock
                         if (computerChoice == "rock")
                         {
@@ -144,12 +156,15 @@ namespace SmgTechnicalTest
                 }
 
                 //Ask the user if they want to play again
-                Console.WriteLine();
-                Console.WriteLine("Would you like to play again? Please enter (Y for yes or N for no): ");
-                answer = Console.ReadLine();
-                answer.ToLower();
+                while (answer != "y" && answer != "n")
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Would you like to play again? Please enter (y for yes or n for no): ");
+                    answer = Console.ReadLine();
+                    answer.ToLower();
+                }
 
-                //
+                //Restart or end the game
                 if (answer == "y")
                 {
                     playAgain = true;
@@ -160,7 +175,9 @@ namespace SmgTechnicalTest
                 else
                 {
                     playAgain = false;
+                    Console.WriteLine("");
                 }
+
             }
         }
     }

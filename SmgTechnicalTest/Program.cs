@@ -7,8 +7,8 @@ namespace SmgTechnicalTest
         static void Main(string[] args)
         {
             //Determine PVC or PVP
-            String pvc = "1 - Player vs Computer";
-            String pvp = "2 - Player vs Player";
+            String pvc = "1 - Player vs Player";
+            String pvp = "2 - Player vs Computer";
 
             Console.WriteLine("Welcome to Arun's attempt at the SMG's technical test");
             Console.WriteLine("\n");
@@ -40,16 +40,16 @@ namespace SmgTechnicalTest
                         case 1:
                             Console.WriteLine("***********************************************************************************************************************");
                             Console.WriteLine();
-                            Console.WriteLine($"You chose {userChoiceInt} - Player vs Computer");
+                            Console.WriteLine($"You chose {userChoiceInt} - Player vs Player");
                             Console.WriteLine();
-                            PlayerVsComputer.Main();
+                            PlayerVsPlayer.Main();
                             break;
 
                         //Else it is PVP, run PVP's main method
                         case 2:
-                            Console.WriteLine($"You chose {userChoiceInt} - Player vs Player");
+                            Console.WriteLine($"You chose {userChoiceInt} - Player vs Computer");
                             Console.WriteLine();
-                            PlayerVsPlayer.Main();
+                            PlayerVsComputer.Main();
                             break;
                     }
                 }
