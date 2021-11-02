@@ -81,9 +81,9 @@ namespace SmgTechnicalTest
                             Console.WriteLine();
                             Console.WriteLine("Stats for this game: ");
                             Console.WriteLine();
-                            Console.WriteLine($"Rock chosen - {rockChosen}, Paper chosen - {paperChosen}");
+                            Console.WriteLine($"Rock chosen - {rockChosen}, Paper chosen - {paperChosen}, Scissors chosen - {scissorsChosen}");
                             Console.WriteLine();
-                            Console.WriteLine($"The game ended in {roundsOfTurns} turns. ");
+                            Console.WriteLine($"The game ended in the {roundsOfTurns}st turn. ");
                             Console.WriteLine();
                             Console.WriteLine("***********************************************************************************************************************");
                         }
@@ -101,9 +101,9 @@ namespace SmgTechnicalTest
                             Console.WriteLine();
                             Console.WriteLine("Stats for this game: ");
                             Console.WriteLine();
-                            Console.WriteLine($"Rock chosen - {rockChosen}, Scissors chosen - {scissorsChosen}");
+                            Console.WriteLine($"Rock chosen - {rockChosen}, Paper chosen - {paperChosen}, Scissors chosen - {scissorsChosen}");
                             Console.WriteLine();
-                            Console.WriteLine($"The game ended in {roundsOfTurns} turns. ");
+                            Console.WriteLine($"The game ended in the {roundsOfTurns}st turn. ");
                             Console.WriteLine();
                             Console.WriteLine("***********************************************************************************************************************");
                         }
@@ -127,9 +127,9 @@ namespace SmgTechnicalTest
                             Console.WriteLine();
                             Console.WriteLine("Stats for this game: ");
                             Console.WriteLine();
-                            Console.WriteLine($"Paper chosen - {paperChosen} times, Rock chosen - {rockChosen} times");
+                            Console.WriteLine($"Rock chosen - {rockChosen}, Paper chosen - {paperChosen}, Scissors chosen - {scissorsChosen}");
                             Console.WriteLine();
-                            Console.WriteLine($"The game ended in the {roundsOfTurns} turn");
+                            Console.WriteLine($"The game ended in the {roundsOfTurns}st turn");
                             Console.WriteLine();
                             Console.WriteLine("***********************************************************************************************************************");
                         }
@@ -167,9 +167,9 @@ namespace SmgTechnicalTest
                             Console.WriteLine();
                             Console.WriteLine("Stats for this game: ");
                             Console.WriteLine();
-                            Console.WriteLine($"Paper chosen - {paperChosen}, Scissors chosen - {scissorsChosen}");
+                            Console.WriteLine($"Rock chosen - {rockChosen}, Paper chosen - {paperChosen}, Scissors chosen - {scissorsChosen}");
                             Console.WriteLine();
-                            Console.WriteLine($"The game ended in {roundsOfTurns} turns. ");
+                            Console.WriteLine($"The game ended in the {roundsOfTurns}st turn. ");
                             Console.WriteLine();
                             Console.WriteLine("***********************************************************************************************************************");
                         }
@@ -193,9 +193,9 @@ namespace SmgTechnicalTest
                             Console.WriteLine();
                             Console.WriteLine("Stats for this game: ");
                             Console.WriteLine();
-                            Console.WriteLine($"Scissors chosen - {scissorsChosen} times, Rock chosen - {rockChosen} times");
+                            Console.WriteLine($"Rock chosen - {rockChosen}, Paper chosen - {paperChosen}, Scissors chosen -  {scissorsChosen}");
                             Console.WriteLine();
-                            Console.WriteLine($"The game ended in {roundsOfTurns} turns.");
+                            Console.WriteLine($"The game ended in the {roundsOfTurns}st turn.");
                             Console.WriteLine();
                             Console.WriteLine("***********************************************************************************************************************");
                         }
@@ -213,9 +213,9 @@ namespace SmgTechnicalTest
                             Console.WriteLine();
                             Console.WriteLine("Stats for this game: ");
                             Console.WriteLine();
-                            Console.WriteLine($"Scissors chosen - {scissorsChosen}, Paper - {paperChosen} times");
+                            Console.WriteLine($"Rock chosen - {rockChosen}, Paper chosen -  {paperChosen} , Scissors chosen -  {scissorsChosen}");
                             Console.WriteLine();
-                            Console.WriteLine($"The game ended in {roundsOfTurns} turns. ");
+                            Console.WriteLine($"The game ended in the {roundsOfTurns}st turn. ");
                             Console.WriteLine();
                             Console.WriteLine("***********************************************************************************************************************");
                         }
