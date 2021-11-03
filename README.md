@@ -16,9 +16,13 @@ the following:
 
 ## Screenshots
 ![Example screenshot](./Screenshots/1.PNG)
+
 ![Example screenshot](./Screenshots/2.PNG)
+
 ![Example screenshot](./Screenshots/3.PNG)
+
 ![Example screenshot](./Screenshots/4.PNG)
+
 ![Example screenshot](./Screenshots/5.PNG)
 
 ## Project Status
