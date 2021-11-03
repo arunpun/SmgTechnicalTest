@@ -15,8 +15,11 @@ the following:
 - Once the result is determined, the game ouputs the results and corresponding messages.
 
 ## Screenshots
-![Example screenshot](./)
-<!-- If you have screenshots you'd like to share, include them here. -->
+![Example screenshot](./Screenshots/1.PNG)
+![Example screenshot](./Screenshots/2.PNG)
+![Example screenshot](./Screenshots/3.PNG)
+![Example screenshot](./Screenshots/4.PNG)
+![Example screenshot](./Screenshots/5.PNG)
 
 ## Project Status
 Project is : Complete :)
